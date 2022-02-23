@@ -2,12 +2,11 @@ package ru.netology.domain;
 
 public class Smartphone extends Product {
 
-    private  String producer;
-
+    private String producer;
 
 
     public Smartphone() {
-        super ();
+        super();
     }
 
     public Smartphone(int id, String name, int price, String producer) {
@@ -23,5 +22,17 @@ public class Smartphone extends Product {
 
     public void setProducer(String producer) {
         this.producer = producer;
+    }
+
+    @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        }
+        if (getProducer().contains(search)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

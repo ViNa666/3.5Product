@@ -82,4 +82,33 @@ class ProductManagerTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldSearchByWhenMatchAuthor() {
+
+        manager.add(book1);
+        manager.add(smartphone1);
+        manager.add(book2);
+        manager.add(smartphone2);
+
+        String text = "Пушкин";
+        Product[] expected = new Product[]{book2};
+        Product[] actual = manager.searchBy(text);
+
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void shouldSearchByWhenMatchProducerI() {
+
+        manager.add(book1);
+        manager.add(smartphone1);
+        manager.add(book2);
+        manager.add(smartphone2);
+
+        String text = "Apple";
+        Product[] expected = new Product[]{smartphone2};
+        Product[] actual = manager.searchBy(text);
+
+        assertArrayEquals(expected, actual);
+    }
 }
