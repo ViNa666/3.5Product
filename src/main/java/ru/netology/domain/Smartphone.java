@@ -2,12 +2,11 @@ package ru.netology.domain;
 
 public class Smartphone extends Product {
 
-    private  String producer;
-
+    private String producer;
 
 
     public Smartphone() {
-        super ();
+        super();
     }
 
     public Smartphone(int id, String name, int price, String producer) {
